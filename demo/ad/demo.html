@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>动态文字显示</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Language" content="zh-CN"/>
+  <style>
+    body {
+      font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+      overflow: auto;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .banner {
+      position: relative;
+      height: 420px;
+      color: #fff;
+      margin-bottom: 130px
+    }
+
+    .banner-sky {
+      position: absolute;
+      top: -150px;
+      bottom: -15px;
+      width: 100%;
+      margin-top: -140px;
+      transform: skewY(-5deg);
+      transform-origin: center;
+      background-image: linear-gradient(180deg, #0d1a44 13%, #3c4f91 56%, #5fc1e4)
+    }
+
+    .banner .container {
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .banner-desc {
+      padding-top: 110px;
+      padding-left: 30px;
+      font-size: 42px;
+      position: relative;
+      z-index: 10;
+      margin-left: 20%;
+    }
+
+    .banner-desc h2 {
+      font-size: 46px;
+      margin: 0;
+      color: #fff
+    }
+
+    .banner-desc h3 {
+      font-size: 46px;
+      margin: 0;
+      color: #fff;
+      font-weight: normal;
+    }
+
+    .banner-desc p {
+      font-size: 14px;
+      opacity: .8;
+      width: 420px;
+      line-height: 1.6;
+      padding-left: 3px
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0
+      }
+      to {
+        opacity: 1
+      }
+    }
+
+    .actor {
+      margin-left: 3px;
+      animation: blink .4s infinite alternate;
+    }
+  </style>
+</head>
+<body>
+<div class="banner">
+  <div class="banner-sky"></div>
+  <div class="container">
+    <div class="banner-desc">
+      <h2>网站快速成型工具</h2>
+      <h3><span id="content"></span><span class="actor">|</span></h3>
+    </div>
+  </div>
+</div>
+<script src="ad.js"></script>
+<script>
+  var data = [
+    {text: '只为守护世界和平', len: 2},
+    {text: '只为你少加班', len: 2},
+    {text: '只为这样的你: 产品设计师', len: 7},
+    {text: '只为这样的你: 视觉设计师', len: 7},
+    {text: '只为这样的你: 产品经理', len: 7},
+    {text: '只为这样的你: 交互设计师', len: 7},
+    {text: '只为这样的你: 前端工程师', len: 7}
+  ]
+  showAD({data: data, el: 'content'});
+</script>
+</body>
+</html>
+
