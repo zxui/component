@@ -1,3 +1,5 @@
-## 预览地址：
+# 常用组件
+## 预览地址： https://zxui.github.io/component
 
-![Image]('imgs/el.gif')
+## Demo1
+![](https://zxui.github.io/component/imgs/el.gif)
