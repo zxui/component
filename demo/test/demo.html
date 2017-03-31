@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+        .block {
+            width: 200px;
+            height: 200px;
+            background-color: #5fc1e4;
+            margin: 20px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="block" data-val="0">0</div>
+<div class="block" data-val="0">0</div>
+<div class="block" data-val="0">0</div>
+<div class="block" data-val="0">0</div>
+<div class="block" data-val="0">0</div>
+<div class="block" data-val="0">0</div>
+<div class="block" data-val="0">0</div>
+<script type="application/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    (function ($) {
+        let $blocks = $('.block');
+        $blocks.each(function () {
+            let _this = $(this);
+            _this.click(function () {
+                if (_this.data('isClick')) {
+                    _this.data('isClick', false);
+                    _this.html('1');
+                } else {
+                    $blocks.each(function () {
+                        $(this).data('val', 1);
+                        $(this).html('1');
+                    })
+                    _this.data('val', 0);
+                    _this.data('isClick', true);
+                    _this.html('0');
+                }
+            });
+        });
+    })($);
+</script>
+</body>
+</html>
