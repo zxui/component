@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>pouchdb</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <script src="//cdn.jsdelivr.net/pouchdb/6.1.2/pouchdb.min.js">
+    </script>
+    <script>
+        var db = new PouchDB('my_database');
+        db.get('mydoc').then(function(doc) {
+            console.log(doc)
+        }).then(function(response) {
+            // handle response
+        }).catch(function (err) {
+            console.log(err);
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
+
